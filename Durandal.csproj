@@ -85,7 +85,14 @@
     <Content Include="App\samples\modal\customModal.js" />
     <Content Include="App\samples\modal\index.html" />
     <Content Include="App\samples\modal\index.js" />
-    <Content Include="App\samples\shell.js" />
+    <Content Include="App\samples\shell.js">
+      <DependentUpon>shell.ts</DependentUpon>
+    </Content>
+    <Content Include="App\samples\shell.org.js" />
+    <TypeScriptCompile Include="App\samples\shell.ts" />
+    <Content Include="App\_dts\durandal.d.ts" />
+    <Content Include="App\_dts\jquery.d.ts" />
+    <Content Include="App\_dts\knockout.d.ts" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
