@@ -424,4 +424,7 @@ declare module "durandal/plugins/router" {
     * After you've configured the router, you need to activate it. This is usually done in your shell. The activate function of the router returns a promise that resolves when the router is ready to start. To use the router, you should add an activate function to your shell and return the result from that. The application startup infrastructure of Durandal will detect your shell's activate function and call it at the appropriate time, waiting for it's promise to resolve. This allows Durandal to properly orchestrate the timing of composition and databinding along with animations and splash screen display.
     */
   export var activate: (defaultRoute: string) => JQueryPromise;
+  
+  // This doesn't look right. How to deal with module as this is a reserved name in TS
+  export var getActivatableInstance: (routeInfo: routeInfo, params: any, _module: any) => any;
 }

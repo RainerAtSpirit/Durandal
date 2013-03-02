@@ -81,6 +81,12 @@
     <Content Include="App\samples\eventAggregator\index.js" />
     <Content Include="App\samples\eventAggregator\subscriber.html" />
     <Content Include="App\samples\eventAggregator\subscriber.js" />
+    <Content Include="App\samples\hello\index.js">
+      <DependentUpon>index.ts</DependentUpon>
+    </Content>
+    <Content Include="App\samples\hello\index.ts" />
+    <Content Include="App\samples\masterDetail\index.ts" />
+    <Content Include="App\samples\masterDetail\project.ts" />
     <Content Include="App\samples\modal\customModal.html" />
     <Content Include="App\samples\modal\customModal.js" />
     <Content Include="App\samples\modal\index.html" />
@@ -88,7 +94,6 @@
     <Content Include="App\samples\shell.js">
       <DependentUpon>shell.ts</DependentUpon>
     </Content>
-    <Content Include="App\samples\shell.org.js" />
     <TypeScriptCompile Include="App\samples\shell.ts" />
     <Content Include="App\_dts\durandal.d.ts" />
     <Content Include="App\_dts\jquery.d.ts" />
@@ -128,7 +133,6 @@
     <Content Include="App\main.js" />
     <Content Include="App\durandal\amd\r.js" />
     <Content Include="App\samples\hello\index.html" />
-    <Content Include="App\samples\hello\index.js" />
     <Content Include="App\samples\masterDetail\project.html" />
     <Content Include="App\samples\masterDetail\project.js" />
     <Content Include="App\samples\masterDetail\index.html" />
