@@ -1,16 +1,13 @@
-﻿define(['durandal/app'], function (app) {
-    
-    var name = ko.observable();
-    var canSayHello = ko.computed(function () {
-        return name() ? true : false;
-    });
+define(["require", "exports", 'durandal/app'], function(require, exports, __app__) {
+    var app = __app__;
 
-    return {
-        displayName: 'What is your name?',
-        name: name,
-        sayHello: function () {
-            app.showMessage('Hello ' + name() + '!', 'Greetings');
-        },
-        canSayHello: canSayHello
-    };
-});
+    exports.name = ko.observable();
+    exports.displayName = 'What is your name?';
+    exports.canSayHello = ko.computed(function () {
+        return exports.name() ? true : false;
+    });
+    function sayHello() {
+        app.showMessage('Hello ' + exports.name() + '!', 'Greetings');
+    }
+    exports.sayHello = sayHello;
+})
