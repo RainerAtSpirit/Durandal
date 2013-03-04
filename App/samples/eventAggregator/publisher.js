@@ -1,15 +1,12 @@
-﻿define(['durandal/app'], function (app) {
-    
-    var message = ko.observable();
-    var canPublish = ko.computed(function () {
-        return message() ? true : false;
-    });
+define(["require", "exports", 'durandal/app'], function(require, exports, __app__) {
+    var app = __app__;
 
-    return {
-        message: message,
-        canPublish:canPublish,
-        publish: function () {
-            app.trigger('sample:event', message());
-        }
-    };
-});
+    exports.message = ko.observable();
+    exports.canPublish = ko.computed(function () {
+        return exports.message() ? true : false;
+    });
+    function publish() {
+        app.trigger('sample:event', exports.message());
+    }
+    exports.publish = publish;
+})

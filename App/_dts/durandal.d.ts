@@ -72,7 +72,10 @@ declare module "durandal/app" {
   /**
     * The events parameter is a space delimited string containing one or more event identifiers. When one of these events is triggered, the callback is called and passed the event data provided by the trigger. The special events value of "all" binds all events on the object to the callback. If a context is provided, it will be bound to this for the callback. If the callback is omitted, then a promise-like object is returned from on. This object represents a subscription and has a then function used to register callbacks.
     */
-  export var on: (events: string, callback: Function, context?) => any;
+  export var on: {
+    (events: string, callback: Function, context?): any;
+    (events: string): JQueryPromise;
+    };
   /**
     * Unwires callbacks from events. If no context is specified, all callbacks with different contexts will be removed. If no callback is specified, all callbacks for the event will be removed. If no event is specified, all event callbacks on the object will be removed.
     */

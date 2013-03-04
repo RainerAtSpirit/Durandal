@@ -164,7 +164,6 @@
   //Start workaround for Typescript 0.8.x issue http://typescript.codeplex.com/workitem/47 
  
     system.setModuleId = function (obj, id) {
-      console.log('hello world');
       if (!obj) {
         return;
       }
