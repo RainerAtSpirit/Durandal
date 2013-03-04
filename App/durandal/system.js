@@ -161,5 +161,31 @@
         return keys;
     };
 
+  //Start workaround for Typescript 0.8.x issue http://typescript.codeplex.com/workitem/47 
+ 
+    system.setModuleId = function (obj, id) {
+      console.log('hello world');
+      if (!obj) {
+        return;
+      }
+
+      if (typeof obj == 'function') {
+        obj.prototype.__moduleId__ = id;
+        return;
+      }
+      //If obj has only one property check if it's a constructor
+      if (typeof obj == 'object' && system.keys(obj).length === 1 && typeof obj[system.keys(obj)[0]].constructor === 'function') {
+        obj[system.keys(obj)[0]].prototype.__moduleId__ = id
+        return;
+      }
+
+      if (typeof obj == 'string') {
+        return;
+      }
+
+      obj.__moduleId__ = id;
+    };
+  //End workaround for TypeScript 0.8.X issue 
+
     return system;
 });

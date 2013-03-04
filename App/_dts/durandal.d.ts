@@ -263,6 +263,11 @@ declare module "durandal/viewModelBinder" {
   export var bind: (obj: any, view: HTMLElement) => void;
 }
 
+// RW: Replace with full module declaration when it becomes available
+declare module "durandal/widget" {
+  export var registerKind: (kind: string) => void;
+} 
+
 interface IViewModelDefaults {
   /**
     * When the activator attempts to activate an item as described below, it will only activate the new item, by default, if it is a different instance than the current. Overwrite this function to change that behavior.
