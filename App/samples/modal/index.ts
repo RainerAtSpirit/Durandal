@@ -4,7 +4,7 @@
 import app = module('durandal/app');
 import _CustomModal = module('./customModal');
 
-var CustomModal = _CustomModal.CustomModal;
+var CustomModal = _CustomModal.ctor;
 
 
   
@@ -13,4 +13,3 @@ export function showCustomModal() {
         app.showMessage('You answered "' + response + '".');
       });
     }
-  

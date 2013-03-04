@@ -4,7 +4,7 @@ import app = module('durandal/app');
 
 
 
-export class CustomModal {
+export class ctor {
   modal: any;
   input = ko.observable('');
 

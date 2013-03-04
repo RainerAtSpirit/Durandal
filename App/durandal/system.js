@@ -173,8 +173,8 @@
         obj.prototype.__moduleId__ = id;
         return;
       }
-      //If obj has only one property check if it's a constructor
-      if (typeof obj == 'object' && system.keys(obj).length === 1 && typeof obj[system.keys(obj)[0]].constructor === 'function') {
+      //If obj has only one property check if it's name is 'ctor'
+      if (typeof obj == 'object' && system.keys(obj).length === 1 && system.keys(obj)[0] === 'ctor') {
         obj[system.keys(obj)[0]].prototype.__moduleId__ = id
         return;
       }
