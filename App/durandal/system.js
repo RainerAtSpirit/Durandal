@@ -161,5 +161,46 @@
         return keys;
     };
 
+  //Start workaround for Typescript 0.8.x issue http://typescript.codeplex.com/workitem/47 
+
+    //ES5 Object.keys shim
+    if (!Object.keys) {
+      Object.keys = function (obj) {
+        var keys = [],
+            k;
+        for (k in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, k)) {
+            keys.push(k);
+          }
+        }
+        return keys;
+      };
+    }
+
+    
+    system.setModuleId = function (obj, id) {
+      console.log('hello world');
+      if (!obj) {
+        return;
+      }
+
+      if (typeof obj == 'function') {
+        obj.prototype.__moduleId__ = id;
+        return;
+      }
+      //If obj has only one property check if it's a constructor
+      if (typeof obj == 'object' && Object.keys(obj).length === 1 && typeof obj[Object.keys(obj)[0]].constructor === 'function') {
+        obj[Object.keys(obj)[0]].prototype.__moduleId__ = id
+        return;
+      }
+
+      if (typeof obj == 'string') {
+        return;
+      }
+
+      obj.__moduleId__ = id;
+    };
+  //End workaround for TypeScript 0.8.X issue 
+
     return system;
 });
