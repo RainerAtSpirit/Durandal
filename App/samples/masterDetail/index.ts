@@ -8,7 +8,11 @@ import viewModel = module('durandal/viewModel');
 // Workaround
 import _Project = module('./project');
 var Project = _Project.ctor;
+<<<<<<< HEAD
 
+=======
+//Project.prototype['__moduleId__'] = _Project['__moduleId__'];
+>>>>>>> c91b4f27de984292a144c12fd738126fcd1e8b16
 
 export var projects = ko.observableArray([
        new Project('Durandal', 'A cross-device, cross-platform application framework written in JavaScript, Durandal is a very small amount of code built on top of three existing and established Javascript libraries: jQuery, Knockout and RequireJS.'),
